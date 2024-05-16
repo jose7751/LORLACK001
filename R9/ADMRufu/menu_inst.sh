@@ -312,20 +312,20 @@ mine_port
 echo -e "\e[0m\e[31m================ \e[1;33mMENU DE PROTOCOLOS\e[0m\e[31m =================\e[0m"
 echo -ne "$(msg -verd "  [1]")$(msg -verm2 ">") $(msg -azu "DROPBEAR      ${inst[dropbear]}")" && echo -e "$(msg -verd "  [7]")$(msg -verm2 ">") $(msg -azu "SQUID         ${inst[squid]}")"
 echo -ne "$(msg -verd "  [2]")$(msg -verm2 ">") $(msg -azu "SOCKS PYTHON  ${inst[python]}")" && echo -e "$(msg -verd "  [8]")$(msg -verm2 ">") $(msg -azu "OPENVPN       ${inst[openvpn]}")"
-echo -ne "$(msg -verd "  [3]")$(msg -verm2 ">") $(msg -azu "SSL           ${inst[stunnel4]}")" && echo -e "$(msg -verd "  [9]")$(msg -verm2 ">") $(msg -azu "SLOWDNS       ${inst[dns-serve]}")" #&& echo -e "$(msg -verd "  [9]")$(msg -verm2 ">") $(msg -azu "SHADOW-LIBEV  $(pid_inst ss-server)")"
-echo -ne "$(msg -verd "  [4]")$(msg -verm2 ">") $(msg -azu "V2RAY         ${inst[v2ray]}")" #&& echo -e "$(msg -verd " [10]")$(msg -verm2 ">") $(msg -azu "SHADOW-NORMAL $(pid_inst ssserver)")"
-echo -ne "$(msg -verd "  [5]")$(msg -verm2 ">") $(msg -azu "OVER WEBSOCKET${inst[$v_node]}")" #&& echo -e "$(msg -verd " [11]")$(msg -verm2 ">") $(msg -azu "SHADOW-R      $(pid_inst)")"
-echo -ne "$(msg -verd "  [6]")$(msg -verm2 ">") $(msg -azu "BADVPN        ${inst[badvpn]}")" #&& echo -e "$(msg -verd "  [X]")$(msg -verm2 ">") $(msg -azu "SlowDNS       $(pid_inst openvpn)")" 
+echo -ne "$(msg -verd "  [3]")$(msg -verm2 ">") $(msg -azu "SSL           ${inst[stunnel4]}")" && echo -e "$(msg -verd "  [9]")$(msg -verm2 ">") $(msg -azu "SlowDNS       ${inst[dns-serve]}")" #&& echo -e "$(msg -verd "  [9]")$(msg -verm2 ">") $(msg -azu "SHADOW-LIBEV  $(pid_inst ss-server)")"
+echo -e "$(msg -verd "  [4]")$(msg -verm2 ">") $(msg -azu "V2RAY         ${inst[v2ray]}")" #&& echo -e "$(msg -verd " [10]")$(msg -verm2 ">") $(msg -azu "SHADOW-NORMAL $(pid_inst ssserver)")"
+echo -e "$(msg -verd "  [5]")$(msg -verm2 ">") $(msg -azu "OVER WEBSOCKET${inst[$v_node]}")" #&& echo -e "$(msg -verd " [11]")$(msg -verm2 ">") $(msg -azu "SHADOW-R      $(pid_inst)")"
+echo -e "$(msg -verd "  [6]")$(msg -verm2 ">") $(msg -azu "BADVPN-UDP    ${inst[badvpn]}")" #&& echo -e "$(msg -verd "  [X]")$(msg -verm2 ">") $(msg -azu "SlowDNS       $(pid_inst openvpn)")" 
 echo -e "\e[31m============== \e[1;33mCONFIGURACIONES RAPIDAS\e[0m\e[31m ==============\e[0m"
-echo -ne "$(msg -verd " [13]")$(msg -verm2 ">") $(msg -azu "BANNER SSH")" && echo -e "$(msg -verd "          [18]")$(msg -verm2 ">") $(msg -azu "TCP (BBR/PLUS)")"
-echo -ne "$(msg -verd " [14]")$(msg -verm2 ">") $(msg -azu "REFREES CACHE/RAM") $(crontab -l|grep -w "vm.drop_caches=3" > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")" && echo -e "$(msg -verd "[19]")$(msg -verm2 ">") $(msg -azu "CAMBIAR PASS ROOT")"
-echo -ne "$(msg -verd " [15]")$(msg -verm2 ">") $(msg -azu "MEMORIA SWAP")  $([[ $(cat /proc/swaps | wc -l) -le 1 ]] && echo -e "\033[1;31m○ " || echo -e "\033[1;32m◉ ")" && echo -e "$(msg -verd "    [20]")$(msg -verm2 ">") $(msg -azu "ACTIVAR ACCESO ROOT")"
-echo -ne "$(msg -verd " [16]")$(msg -verm2 ">") $(msg -azu "ADMIN PORTS ACTIVOS")" && echo -e "$(msg -verd " [21]")$(msg -verm2 ">") $(msg -azu "CONF MENU PRINCIPAL")"
-echo -e "$(msg -verd " [17]")$(msg -verm2 ">") $(msg -azu "GEN DOMI/CERT-SSL") $([[ -z $(ls "${ADM_crt}") ]] && echo -e "\033[1;31m○ " || echo -e "\033[1;32m◉ ")"
+echo -ne "$(msg -verd " [12]")$(msg -verm2 ">") $(msg -azu "BANNER SSH")" && echo -e "$(msg -verd "          [17]")$(msg -verm2 ">") $(msg -azu "TCP (BBR/PLUS)")"
+echo -ne "$(msg -verd " [13]")$(msg -verm2 ">") $(msg -azu "REFREES CACHE/RAM") $(crontab -l|grep -w "vm.drop_caches=3" > /dev/null && echo -e "\033[1;32m◉ " || echo -e "\033[1;31m○ ")" && echo -e "$(msg -verd "[18]")$(msg -verm2 ">") $(msg -azu "CAMBIAR PASS ROOT")"
+echo -ne "$(msg -verd " [14]")$(msg -verm2 ">") $(msg -azu "MEMORIA SWAP")  $([[ $(cat /proc/swaps | wc -l) -le 1 ]] && echo -e "\033[1;31m○ " || echo -e "\033[1;32m◉ ")" && echo -e "$(msg -verd "    [19]")$(msg -verm2 ">") $(msg -azu "ACTIVAR ACCESO ROOT")"
+echo -ne "$(msg -verd " [15]")$(msg -verm2 ">") $(msg -azu "ADMIN PORTS ACTIVOS")" && echo -e "$(msg -verd " [20]")$(msg -verm2 ">") $(msg -azu "CONF MENU PRINCIPAL")"
+echo -e "$(msg -verd " [16]")$(msg -verm2 ">") $(msg -azu "GEN DOMI/CERT-SSL") $([[ -z $(ls "${ADM_crt}") ]] && echo -e "\033[1;31m○ " || echo -e "\033[1;32m◉ ")"
 msg -bar
-echo -e "$(msg -verd " [22]") $(msg -verm2 ">") $(msg -azu "HERRAMIENTAS y EXTRAS")"
+echo -e "$(msg -verd " [21]") $(msg -verm2 ">") $(msg -azu "HERRAMIENTAS y EXTRAS")"
 msg -bar
-echo -ne "$(msg -verd "  [0]") $(msg -verm2 ">") " && msg -bra "   \033[1;41m VOLVER \033[0m $(msg -verd "       [23]") $(msg -verm2 ">") $(msg -azu AUTO-INICIAR) ${AutoRun}" 
+echo -ne "$(msg -verd "  [0]") $(msg -verm2 ">") " && msg -bra "   \033[1;41m VOLVER \033[0m $(msg -verd "       [22]") $(msg -verm2 ">") $(msg -azu AUTO-INICIAR) ${AutoRun}" 
 msg -bar
 selection=$(selection_fun 23)
 case $selection in
@@ -339,18 +339,18 @@ case $selection in
   7)${ADM_inst}/squid.sh;;
   8)${ADM_inst}/openvpn.sh;;
   9)${ADM_inst}/slowdns.sh;;
-  13)baner_fun;;
-  14)cache_ram;;
-  15)${ADM_inst}/swapfile.sh;;
-  16)${ADM_inst}/ports.sh;;
-  17)${ADM_inst}/cert.sh;;
-  18)${ADM_inst}/tcp.sh;;
-  19)root_pass;;
-  20)root_pass 1;;
-  21)conf_menu;;
-  22)${ADMRufu}/tool_extras.sh;;
+  12)baner_fun;;
+  13)cache_ram;;
+  14)${ADM_inst}/swapfile.sh;;
+  15)${ADM_inst}/ports.sh;;
+  16)${ADM_inst}/cert.sh;;
+  17)${ADM_inst}/tcp.sh;;
+  18)root_pass;;
+  19)root_pass 1;;
+  20)conf_menu;;
+  21)${ADMRufu}/tool_extras.sh;;
   #22)chekuser.sh;;
-  23)fun_autorun;;
+  22)fun_autorun;;
 esac
 }
 
